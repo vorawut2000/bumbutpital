@@ -1,0 +1,33 @@
+.overview {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.overviewItem {
+    flex: 1;
+    margin: 0px 20px;
+    padding: 30px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.overviewTitle {
+    font-size: 20px;
+}
+
+.overviewNumberContainer {
+    margin: 10px 0px;
+    display: flex;
+    align-items: center;
+}
+
+.overviewNumber {
+    font-size: 30px;
+    font-weight: 600;
+}
+
+/* .overviewIcon { */
+/*  */
+/* } */
+
