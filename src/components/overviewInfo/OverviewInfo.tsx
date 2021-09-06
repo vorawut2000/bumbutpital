@@ -36,6 +36,16 @@ const OverviewInfo = (props: Props) => {
             <span className={classes.overviewTitle}>Total user</span>
         </div>
       </div>
+
+      <div className={classes.overviewItem}>
+        <span className={classes.overviewIcon}>
+          <People />
+        </span>
+        <div className={classes.overviewNumberContainer}>
+            <span className={classes.overviewNumber}>112</span>
+            <span className={classes.overviewTitle}>Total user</span>
+        </div>
+      </div>
     </div>
   );
 };

@@ -1,18 +1,18 @@
 import React from 'react'
 import OverviewInfo from '../../components/overviewInfo/OverviewInfo'
-import classes from './Home.module.css'
+import classes from './Dashboard.module.css'
 
 interface Props {
     
 }
 
-const Home = (props: Props) => {
+const Dashboard = (props: Props) => {
     return (
-        <div className={classes.home}>
-            <h1>Overview</h1>
+        <div className={classes.dashboard}>
+            
             <OverviewInfo />
         </div>
     )
 }
 
-export default Home
+export default Dashboard

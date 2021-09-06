@@ -3,6 +3,7 @@ import Navbar from "./components/navbar/Navbar";
 import Sidebar from "./components/sidebar/Sidebar";
 import "./App.css";
 import Home from "./app/home/Home";
+import { Dashboard } from "@material-ui/icons";
 
 function App() {
   return (
