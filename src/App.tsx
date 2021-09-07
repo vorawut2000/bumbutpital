@@ -4,7 +4,6 @@ import Sidebar from "./components/sidebar/Sidebar";
 import "./App.css";
 import Home from "./app/home/Home";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import { Dashboard } from "@material-ui/icons";
 
 function App() {
   return (
