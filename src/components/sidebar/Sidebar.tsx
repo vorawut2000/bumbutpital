@@ -1,6 +1,5 @@
 import React from "react";
 import classes from "./Sidebar.module.css";
-import ShowChartIcon from '@material-ui/icons/ShowChart';
 
 interface Props {}
 
@@ -12,7 +11,6 @@ const Sidebar = (props: Props) => {
             <h3 className={classes.sidebarTitle}>Main</h3>
             <ul className={classes.sidebarList}>
                 <li className={classes.sidebarListItem}>
-                    <ShowChartIcon className={classes.sidebarIcon} />
                     Dashboard
                 </li>
             </ul>
