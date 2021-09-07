@@ -12,8 +12,8 @@ const OverviewInfo = (props: Props) => {
           <People />
         </span>
         <div className={classes.overviewNumberContainer}>
-            <span className={classes.overviewNumber}>112</span>
-            <span className={classes.overviewTitle}>Total user</span>
+          <span className={classes.overviewNumber}>112</span>
+          <span className={classes.overviewTitle}>Total user</span>
         </div>
       </div>
 
@@ -22,8 +22,8 @@ const OverviewInfo = (props: Props) => {
           <People />
         </span>
         <div className={classes.overviewNumberContainer}>
-            <span className={classes.overviewNumber}>112</span>
-            <span className={classes.overviewTitle}>Total user</span>
+          <span className={classes.overviewNumber}>112</span>
+          <span className={classes.overviewTitle}>Total user</span>
         </div>
       </div>
 
@@ -32,8 +32,8 @@ const OverviewInfo = (props: Props) => {
           <People />
         </span>
         <div className={classes.overviewNumberContainer}>
-            <span className={classes.overviewNumber}>112</span>
-            <span className={classes.overviewTitle}>Total user</span>
+          <span className={classes.overviewNumber}>112</span>
+          <span className={classes.overviewTitle}>Total user</span>
         </div>
       </div>
 
@@ -42,8 +42,8 @@ const OverviewInfo = (props: Props) => {
           <People />
         </span>
         <div className={classes.overviewNumberContainer}>
-            <span className={classes.overviewNumber}>112</span>
-            <span className={classes.overviewTitle}>Total user</span>
+          <span className={classes.overviewNumber}>112</span>
+          <span className={classes.overviewTitle}>Total user</span>
         </div>
       </div>
     </div>
