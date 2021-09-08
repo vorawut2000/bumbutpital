@@ -23,8 +23,7 @@
 
 .contentCardListItem{
     display: flex;
-    align-items: center;
-    margin: 20px 0px;
+    margin: 20px;
 }
 
 .avatar{
@@ -32,6 +31,7 @@
     height: 40px;
     border-radius: 50%;
     object-fit: cover;
+    margin-right: 20px;
 }
 
 .contentDetail{
@@ -40,13 +40,35 @@
 }
 
 .contentDetailTitle{
-    font-weight: 600;
+    font-size: 24px;
+    font-weight: 400;
+    padding: 2px;
 }
 
 .contentDetailAdmin{
+    font-size: 12px;
     font-weight: 300;
+    padding: 2px;
 }
 
 .contentDate{
+    display: inline-flex;
+    flex-direction: column;
+    text-align: center;
+}
 
+.date {
+    font-size: 24px;
+    font-weight: 400;
+}
+
+.month {
+    font-size: 8px;
+    padding: 4px 10px 4px 10px;
+    background-color: #C4C4C4;
+    border-radius: 5px;
+}
+
+.contentBriefDetail {
+    padding: 2px;
 }
