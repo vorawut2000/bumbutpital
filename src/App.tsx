@@ -4,6 +4,7 @@ import Sidebar from "./components/sidebar/Sidebar";
 import "./App.css";
 import Home from "./app/home/Home";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Landing from "./app/landing/Landing";
 
 function App() {
   return (
@@ -11,9 +12,12 @@ function App() {
       <div className="App">
         <Navbar />
         <div className="container">
-          <Sidebar />
           <Switch>
             <Route exact path="/">
+              <Landing />
+            </Route>
+            <Route exact path="/home">
+              <Sidebar />
               <Home />
             </Route>
           </Switch>
