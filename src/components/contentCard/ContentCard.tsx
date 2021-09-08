@@ -5,7 +5,7 @@ import classes from "./ContentCard.module.css";
 const ContentCard = () => {
   return (
     <div className={classes.contentCard}>
-      <div className={classes.contentCardTitle}>Content Card</div>
+      <div className={classes.contentCardTitle}>Content</div>
       <ul className={classes.contentCardList}>
         <li className={classes.contentCardListItem}>
           <img
