@@ -1,0 +1,42 @@
+.login {
+  width: min-content;
+  flex: 1;
+  padding: 64px;
+  -webkit-box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
+  background-color: #ecf2ff;
+}
+
+.loginTitle {
+  font-size: 32px;
+  font-weight: 700;
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+.loginForm {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+
+}
+
+.loginItem {
+  display: flex;
+  flex-direction: column;
+  padding: 12px;
+}
+
+.loginItem > label {
+    font-size: 24px;
+    font-weight: 500;
+    padding-bottom: 8px;
+}
+
+.loginInput {
+  border: none;
+  width: 400px;
+  height: 48px;
+  padding: 10px;
+  border-radius: 5px;
+}
