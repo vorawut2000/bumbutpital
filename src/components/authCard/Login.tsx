@@ -1,6 +1,7 @@
-import { Button, makeStyles } from "@material-ui/core";
-import React from "react";
-import classes from "./Login.module.css";
+import React, { useState } from "react";
+import classes from "./AuthCard.module.css";
+import { Button, Checkbox, Link, makeStyles } from "@material-ui/core";
+import { useHistory } from "react-router-dom";
 
 const useStyles = makeStyles({
   root: {
@@ -14,38 +15,60 @@ const useStyles = makeStyles({
   },
 });
 
-const Login = () => {
+const Login = ({onClick}: any) => {
   const style = useStyles();
-  
+  const history = useHistory();
+  const [checked, setChecked] = useState(true);
+
+  const submitHandler = () => {
+    history.push("/home");
+  };
+
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setChecked(event.target.checked);
+  };
+
   return (
-    <div className={classes.login}>
-      <h1 className={classes.loginTitle}>Admin Login</h1>
-      <form className={classes.loginForm}>
-        <div className={classes.loginItem}>
+    <div className={classes.authCard}>
+      <h1 className={classes.authCardTitle}>Admin Login</h1>
+      <div className={classes.authCardForm}>
+        <div className={classes.authCardItem}>
           <label>Username or Email</label>
           <input
             type="text"
             placeholder="Username"
-            className={classes.loginInput}
+            className={classes.authCardInput}
           />
         </div>
-        <div className={classes.loginItem}>
+        <div className={classes.authCardItem}>
           <label>Password</label>
           <input
             type="password"
             placeholder="Password"
-            className={classes.loginInput}
+            className={classes.authCardInput}
           />
+        </div>
+        <div className={classes.authCheckbox}>
+          <Checkbox
+            checked={checked}
+            onChange={handleChange}
+            inputProps={{ "aria-label": "primary checkbox" }}
+          />
+          <span>Remember me</span>
         </div>
         <Button
           variant="contained"
           color="primary"
           size="large"
           className={style.root}
+          onClick={submitHandler}
         >
           Login
         </Button>
-      </form>
+        <Link onClick={onClick} className={classes.authLink}>
+          Sign Up
+        </Link>
+      </div>
     </div>
   );
 };

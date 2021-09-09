@@ -10,7 +10,7 @@ const Authen = () => {
     setIsLogin(!isUILogin);
   };
 
-  let renderContent = isUILogin ? <Login /> : <Register />;
+  let renderContent = isUILogin ? <Login onClick={onSwitch} /> : <Register onClick={onSwitch}/>;
 
   return (
     <div className={classes.authen}>

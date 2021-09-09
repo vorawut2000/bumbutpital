@@ -1,5 +1,6 @@
 import { Button, makeStyles } from "@material-ui/core";
 import React from "react";
+import { useHistory } from "react-router-dom";
 import classes from "./Landing.module.css";
 
 const useStyles = makeStyles({
@@ -17,6 +18,10 @@ const useStyles = makeStyles({
 
 const Landing = () => {
   const style = useStyles();
+  const history = useHistory();
+  const submitHandler = () => {
+    history.push("/auth")
+  }
 
   return (
     <div className={classes.landing}>
@@ -30,7 +35,7 @@ const Landing = () => {
       <div className={classes.quote}>
         <h1>Let we help you, to find the patient</h1>
         <h2>Good Mental health is precise.</h2>
-        <Button variant="contained" color="primary" size="large" className={style.root}>
+        <Button variant="contained" color="primary" size="large" className={style.root} onClick={submitHandler}>
           Login
         </Button>
       </div>
