@@ -6,6 +6,7 @@ import Home from "./app/home/Home";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Landing from "./app/landing/Landing";
 import Authen from "./app/auth/Authen";
+import Register from "./components/authCard/Register";
 
 function App() {
   return (
@@ -20,10 +21,13 @@ function App() {
             <Route exact path="/auth">
               <Authen />
             </Route>
-            <Route exact path="/home">
+            
+            <Router>
               <Sidebar />
-              <Home />
-            </Route>
+              <Route path="/home">
+                <Home />
+              </Route>
+            </Router>
           </Switch>
         </div>
       </div>
