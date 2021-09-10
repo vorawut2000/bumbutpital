@@ -15,7 +15,7 @@ const Authen = () => {
   return (
     <div className={classes.authen}>
       <div className={classes.logoContainer}>
-        <img src="/assets/images/BPTLogo.png" />
+        <img src="/assets/images/BPTLogo.png" alt="BPT logo" />
         <h1>BUMBUTPITAL</h1>
       </div>
       <div className={classes.authenCard}>{renderContent}</div>

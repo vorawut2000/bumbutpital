@@ -6,7 +6,7 @@ import Home from "./app/home/Home";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Landing from "./app/landing/Landing";
 import Authen from "./app/auth/Authen";
-import Register from "./components/authCard/Register";
+import ManagePost from "./app/content/ManagePost";
 
 function App() {
   return (
@@ -26,6 +26,9 @@ function App() {
               <Sidebar />
               <Route path="/home">
                 <Home />
+              </Route>
+              <Route path="/posts">
+                <ManagePost />
               </Route>
             </Router>
           </Switch>
