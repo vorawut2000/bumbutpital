@@ -85,15 +85,15 @@ export const videoData = [
   {
     id: 1,
     title: "What is depression? - Helen M. Farrell",
-    admin: "Vorawut",
-    link: "vorawut.pun@mail.kmutt.ac.th",
+    username: "Vorawut",
+    link: "https://www.youtube.com/watch?v=z-IR48Mb3W0",
     date: "30 April 2021",
   },
   {
     id: 2,
     title: "What is depression like?",
-    admin: "Aekknon",
-    link: "vorawut.pun@mail.kmutt.ac.th",
+    username: "Aekknon",
+    link: "https://www.youtube.com/watch?v=5OiN1Zikz08",
     date: "30 April 2021",
   },
 ];
