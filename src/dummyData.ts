@@ -1,251 +1,235 @@
+export const contentData = [
+  {
+    id: 1,
+    username: "Aekknon",
+    title: "What is Depression?",
+    categories: "Depression",
+    depression: "Minimal",
+    date: "30 April 2021",
+  },
+  {
+    id: 2,
+    username: "Aekknon",
+    title: "How to Fight Depression Naturally",
+    categories: "Health",
+    depression: "Moderately Severe",
+    date: "30 April 2021",
+  },
+  {
+    id: 3,
+    username: "Aekknon",
+    title: "What is Depression?",
+    categories: "Depression",
+    depression: "Minimal",
+    date: "30 April 2021",
+  },
+  {
+    id: 4,
+    username: "Aekknon",
+    title: "What is Depression?",
+    categories: "Depression",
+    depression: "Minimal",
+    date: "30 April 2021",
+  },
+  {
+    id: 5,
+    username: "Aekknon",
+    title: "What is Depression?",
+    categories: "Depression",
+    depression: "Minimal",
+    date: "30 April 2021",
+  },
+  {
+    id: 6,
+    username: "Aekknon",
+    title: "What is Depression?",
+    categories: "Depression",
+    depression: "Minimal",
+    date: "30 April 2021",
+  },
+  {
+    id: 7,
+    username: "Aekknon",
+    title: "What is Depression?",
+    categories: "Depression",
+    depression: "Minimal",
+    date: "30 April 2021",
+  },
+  {
+    id: 8,
+    username: "Aekknon",
+    title: "What is Depression?",
+    categories: "Depression",
+    depression: "Minimal",
+    date: "30 April 2021",
+  },
+  {
+    id: 9,
+    username: "Aekknon",
+    title: "What is Depression?",
+    categories: "Depression",
+    depression: "Minimal",
+    date: "30 April 2021",
+  },
+  {
+    id: 10,
+    username: "Aekknon",
+    title: "What is Depression?",
+    categories: "Depression",
+    depression: "Minimal",
+    date: "30 April 2021",
+  },
+];
+
+export const videoData = [
+  {
+    id: 1,
+    title: "What is depression? - Helen M. Farrell",
+    admin: "Vorawut",
+    link: "vorawut.pun@mail.kmutt.ac.th",
+    date: "30 April 2021",
+  },
+  {
+    id: 2,
+    title: "What is depression like?",
+    admin: "Aekknon",
+    link: "vorawut.pun@mail.kmutt.ac.th",
+    date: "30 April 2021",
+  },
+];
+
 export const userData = [
-    {
-      name: "Jan",
-      "Active User": 4000,
-    },
-    {
-      name: "Feb",
-      "Active User": 3000,
-    },
-    {
-      name: "Mar",
-      "Active User": 5000,
-    },
-    {
-      name: "Apr",
-      "Active User": 4000,
-    },
-    {
-      name: "May",
-      "Active User": 3000,
-    },
-    {
-      name: "Jun",
-      "Active User": 2000,
-    },
-    {
-      name: "Jul",
-      "Active User": 4000,
-    },
-    {
-      name: "Agu",
-      "Active User": 3000,
-    },
-    {
-      name: "Sep",
-      "Active User": 4000,
-    },
-    {
-      name: "Oct",
-      "Active User": 1000,
-    },
-    {
-      name: "Nov",
-      "Active User": 4000,
-    },
-    {
-      name: "Dec",
-      "Active User": 3000,
-    },
-  ];
+  {
+    id: 1,
+    name: "Vorawut Permsaengsuwan",
+    role: "Admin",
+    email: "vorawut.pun@mail.kmutt.ac.th",
+  },
+  {
+    id: 2,
+    name: "Wisa Moolhom",
+    role: "User",
+    email: "wisa.gubewgibi@mail.kmutt.ac.th",
+  },
+  {
+    id: 3,
+    name: "Aekknon Phomsiriudom",
+    role: "Admin",
+    email: "aekknon.phomsiriudom@mail.kmutt.ac.th",
+  },
+  {
+    id: 4,
+    name: "Wisa Moolhom",
+    role: "User",
+    email: "wisa.gubewgibi@mail.kmutt.ac.th",
+  },
+  {
+    id: 5,
+    name: "Wisa Moolhom",
+    role: "User",
+    email: "wisa.gubewgibi@mail.kmutt.ac.th",
+  },
+  {
+    id: 6,
+    name: "Aekknon Phomsiriudom",
+    role: "Admin",
+    email: "aekknon.phomsiriudom@mail.kmutt.ac.th",
+  },
+  {
+    id: 7,
+    name: "Vorawut Permsaengsuwan",
+    role: "Admin",
+    email: "vorawut.pun@mail.kmutt.ac.th",
+  },
+  {
+    id: 8,
+    name: "Aekknon Phomsiriudom",
+    role: "Admin",
+    email: "aekknon.phomsiriudom@mail.kmutt.ac.th",
+  },
+  {
+    id: 9,
+    name: "Vorawut Permsaengsuwan",
+    role: "Admin",
+    email: "vorawut.pun@mail.kmutt.ac.th",
+  },
+  {
+    id: 10,
+    name: "Aekknon Phomsiriudom",
+    role: "Admin",
+    email: "aekknon.phomsiriudom@mail.kmutt.ac.th",
+  },
+];
 
-  export const productData = [
-    {
-      name: "Jan",
-      "Sales": 4000,
-    },
-    {
-      name: "Feb",
-      "Sales": 3000,
-    },
-    {
-      name: "Mar",
-      "Sales": 5000,
-    },
-  ];
-
-  export const userRows = [
-    {
-      id: 1,
-      username: "Jon Snow",
-      avatar:
-        "https://images.pexels.com/photos/1152994/pexels-photo-1152994.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
-      email: "jon@gmail.com",
-      status: "active",
-      transaction: "$120.00",
-    },
-    {
-      id: 2,
-      username: "Jon Snow",
-      avatar:
-        "https://images.pexels.com/photos/1152994/pexels-photo-1152994.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
-      email: "jon@gmail.com",
-      status: "active",
-      transaction: "$120.00",
-    },
-    {
-      id: 3,
-      username: "Jon Snow",
-      avatar:
-        "https://images.pexels.com/photos/1152994/pexels-photo-1152994.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
-      email: "jon@gmail.com",
-      status: "active",
-      transaction: "$120.00",
-    },
-    {
-      id: 4,
-      username: "Jon Snow",
-      avatar:
-        "https://images.pexels.com/photos/1152994/pexels-photo-1152994.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
-      email: "jon@gmail.com",
-      status: "active",
-      transaction: "$120.00",
-    },
-    {
-      id: 5,
-      username: "Jon Snow",
-      avatar:
-        "https://images.pexels.com/photos/1152994/pexels-photo-1152994.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
-      email: "jon@gmail.com",
-      status: "active",
-      transaction: "$120.00",
-    },
-    {
-      id: 6,
-      username: "Jon Snow",
-      avatar:
-        "https://images.pexels.com/photos/1152994/pexels-photo-1152994.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
-      email: "jon@gmail.com",
-      status: "active",
-      transaction: "$120.00",
-    },
-    {
-      id: 7,
-      username: "Jon Snow",
-      avatar:
-        "https://images.pexels.com/photos/1152994/pexels-photo-1152994.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
-      email: "jon@gmail.com",
-      status: "active",
-      transaction: "$120.00",
-    },
-    {
-      id: 8,
-      username: "Jon Snow",
-      avatar:
-        "https://images.pexels.com/photos/1152994/pexels-photo-1152994.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
-      email: "jon@gmail.com",
-      status: "active",
-      transaction: "$120.00",
-    },
-    {
-      id: 9,
-      username: "Jon Snow",
-      avatar:
-        "https://images.pexels.com/photos/1152994/pexels-photo-1152994.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
-      email: "jon@gmail.com",
-      status: "active",
-      transaction: "$120.00",
-    },
-    {
-      id: 10,
-      username: "Jon Snow",
-      avatar:
-        "https://images.pexels.com/photos/1152994/pexels-photo-1152994.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
-      email: "jon@gmail.com",
-      status: "active",
-      transaction: "$120.00",
-    },
-  ];
-
-  export const productRows = [
-    {
-      id: 1,
-      name: "Apple Airpods",
-      img:
-        "https://images.pexels.com/photos/7156886/pexels-photo-7156886.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
-      stock: 123,
-      status: "active",
-      price: "$120.00",
-    },
-    {
-      id: 2,
-      name: "Apple Airpods",
-      img:
-        "https://images.pexels.com/photos/7156886/pexels-photo-7156886.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
-      stock: 123,
-      status: "active",
-      price: "$120.00",
-    },
-    {
-      id: 3,
-      name: "Apple Airpods",
-      img:
-        "https://images.pexels.com/photos/7156886/pexels-photo-7156886.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
-      stock: 123,
-      status: "active",
-      price: "$120.00",
-    },
-    {
-      id: 4,
-      name: "Apple Airpods",
-      img:
-        "https://images.pexels.com/photos/7156886/pexels-photo-7156886.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
-      stock: 123,
-      status: "active",
-      price: "$120.00",
-    },
-    {
-      id: 5,
-      name: "Apple Airpods",
-      img:
-        "https://images.pexels.com/photos/7156886/pexels-photo-7156886.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
-      stock: 123,
-      status: "active",
-      price: "$120.00",
-    },
-    {
-      id: 6,
-      name: "Apple Airpods",
-      img:
-        "https://images.pexels.com/photos/7156886/pexels-photo-7156886.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
-      stock: 123,
-      status: "active",
-      price: "$120.00",
-    },
-    {
-      id: 7,
-      name: "Apple Airpods",
-      img:
-        "https://images.pexels.com/photos/7156886/pexels-photo-7156886.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
-      stock: 123,
-      status: "active",
-      price: "$120.00",
-    },
-    {
-      id: 8,
-      name: "Apple Airpods",
-      img:
-        "https://images.pexels.com/photos/7156886/pexels-photo-7156886.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
-      stock: 123,
-      status: "active",
-      price: "$120.00",
-    },
-    {
-      id: 9,
-      name: "Apple Airpods",
-      img:
-        "https://images.pexels.com/photos/7156886/pexels-photo-7156886.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
-      stock: 123,
-      status: "active",
-      price: "$120.00",
-    },
-    {
-      id: 10,
-      name: "Apple Airpods",
-      img:
-        "https://images.pexels.com/photos/7156886/pexels-photo-7156886.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
-      stock: 123,
-      status: "active",
-      price: "$120.00",
-    },
-  ];
+export const promotionData = [
+  {
+    id: 1,
+    promotion: "สุขภาพดี ดีต่อใจ",
+    hospital: "Bangkok Hospital",
+    expireDate: "31 August 2021",
+    admin: "Aekknon",
+  },
+  {
+    id: 2,
+    promotion: "สุขภาพดี ดีต่อใจ",
+    hospital: "Bangkok Hospital",
+    expireDate: "31 August 2021",
+    admin: "Aekknon",
+  },
+  {
+    id: 3,
+    promotion: "สุขภาพดี ดีต่อใจ",
+    hospital: "Bangkok Hospital",
+    expireDate: "31 August 2021",
+    admin: "Aekknon",
+  },
+  {
+    id: 4,
+    promotion: "สุขภาพดี ดีต่อใจ",
+    hospital: "Bangkok Hospital",
+    expireDate: "31 August 2021",
+    admin: "Aekknon",
+  },
+  {
+    id: 5,
+    promotion: "สุขภาพดี ดีต่อใจ",
+    hospital: "Bangkok Hospital",
+    expireDate: "31 August 2021",
+    admin: "Aekknon",
+  },
+  {
+    id: 6,
+    promotion: "สุขภาพดี ดีต่อใจ",
+    hospital: "Bangkok Hospital",
+    expireDate: "31 August 2021",
+    admin: "Aekknon",
+  },
+  {
+    id: 7,
+    promotion: "สุขภาพดี ดีต่อใจ",
+    hospital: "Bangkok Hospital",
+    expireDate: "31 August 2021",
+    admin: "Aekknon",
+  },
+  {
+    id: 8,
+    promotion: "สุขภาพดี ดีต่อใจ",
+    hospital: "Bangkok Hospital",
+    expireDate: "31 August 2021",
+    admin: "Aekknon",
+  },
+  {
+    id: 9,
+    promotion: "สุขภาพดี ดีต่อใจ",
+    hospital: "Bangkok Hospital",
+    expireDate: "31 August 2021",
+    admin: "Aekknon",
+  },
+  {
+    id: 10,
+    promotion: "สุขภาพดี ดีต่อใจ",
+    hospital: "Bangkok Hospital",
+    expireDate: "31 August 2021",
+    admin: "Aekknon",
+  },
+];
