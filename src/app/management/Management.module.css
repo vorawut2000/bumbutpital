@@ -1,14 +1,9 @@
-.userList {
+.manageList {
   flex: auto;
   padding: 32px;
 }
 
-.userListUser {
-  display: flex;
-  align-items: center;
-}
-
-.userListImg {
+.manageListImg {
   width: 32px;
   height: 32px;
   border-radius: 50%;
@@ -16,7 +11,7 @@
   margin-right: 10px;
 }
 
-.userListEdit {
+.manageListEdit {
   padding: 5px 10px;
   color: #66ea63;
   cursor: pointer;
@@ -25,7 +20,7 @@
   font-size: 16px;
 }
 
-.userListDelete {
+.manageListDelete {
   padding: 5px 10px;
   color: #ea6363;
   cursor: pointer;
@@ -34,7 +29,7 @@
   font-size: 16px;
 }
 
-.userListPublish {
+.manageListPublish {
   padding: 5px 10px;
   color: #6367ea;
   cursor: pointer;
@@ -43,7 +38,16 @@
   font-size: 16px;
 }
 
-.userTitle {
+.manageListDetail {
+  padding: 5px 10px;
+  color: #6367ea;
+  cursor: pointer;
+  margin-right: 20px;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.manageTitle {
   font-size: 32px;
   font-weight: 600;
   padding-bottom: 20px;

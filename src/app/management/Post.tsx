@@ -32,7 +32,11 @@ const ManagePost = () => {
   };
 
   const columns = [
-    { field: "id", headerName: "No.", width: 190 },
+    {
+      field: "id",
+      headerName: "No.",
+      width: 190,
+    },
     {
       field: "title",
       headerName: "Title",
@@ -63,20 +67,20 @@ const ManagePost = () => {
           <>
             <Link
               to={"/posts/" + params.row.id}
-              className={classes.userListEdit}
+              className={classes.manageListEdit}
             >
               Edit
             </Link>
             <Link
               to={"/posts/" + params.row.id}
-              className={classes.userListDelete}
+              className={classes.manageListDelete}
               onClick={() => handleDelete(params.row.id)}
             >
               Delete
             </Link>
             <Link
               to={"/posts/" + params.row.id}
-              className={classes.userListPublish}
+              className={classes.manageListPublish}
             >
               Publish
             </Link>
@@ -87,8 +91,8 @@ const ManagePost = () => {
   ];
 
   return (
-    <div className={classes.userList}>
-      <div className={classes.userTitle}>
+    <div className={classes.manageList}>
+      <div className={classes.manageTitle}>
         Manage Post
         <Button
           variant="contained"
@@ -101,13 +105,13 @@ const ManagePost = () => {
         </Button>
       </div>
       <DataGrid
-        rows={data}
-        disableSelectionOnClick
-        columns={columns}
-        pageSize={10}
-        checkboxSelection
-        autoPageSize={true}
         autoHeight
+        autoPageSize={true}
+        checkboxSelection
+        columns={columns}
+        disableSelectionOnClick
+        pageSize={10}
+        rows={data}
       />
     </div>
   );

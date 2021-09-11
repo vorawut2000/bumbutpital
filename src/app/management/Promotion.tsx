@@ -1,6 +1,6 @@
 import React from "react";
 import classes from "./Management.module.css";
-import { contentData } from "../../dummyData";
+import { promotionData } from "../../dummyData";
 import { Button, makeStyles } from "@material-ui/core";
 import { DataGrid } from "@mui/x-data-grid";
 import { Link, useHistory } from "react-router-dom";
@@ -17,11 +17,10 @@ const useStyles = makeStyles({
   },
 });
 
-//have to change type!!!!
-const ManagePost = () => {
+const ManagePromotion = () => {
   const history = useHistory();
   const style = useStyles();
-  const [data, setData] = useState(contentData);
+  const [data, setData] = useState(promotionData);
 
   const handleDelete = (id: any) => {
     setData(data.filter((item) => item.id !== id));
@@ -32,26 +31,29 @@ const ManagePost = () => {
   };
 
   const columns = [
-    { field: "id", headerName: "No.", width: 190 },
     {
-      field: "title",
-      headerName: "Title",
-      width: 300,
-    },
-    { field: "username", headerName: "Author", width: 300 },
-    {
-      field: "categories",
-      headerName: "Categories",
-      width: 300,
+      field: "id",
+      headerName: "No.",
+      width: 190,
     },
     {
-      field: "depression",
-      headerName: "Depression Severity",
+      field: "promotion",
+      headerName: "Promotion",
       width: 300,
     },
     {
-      field: "date",
-      headerName: "Date",
+      field: "hospital",
+      headerName: "Hospital",
+      width: 300,
+    },
+    {
+      field: "expireDate",
+      headerName: "Expire Date",
+      width: 300,
+    },
+    {
+      field: "admin",
+      headerName: "Admin",
       width: 300,
     },
     {
@@ -63,22 +65,16 @@ const ManagePost = () => {
           <>
             <Link
               to={"/posts/" + params.row.id}
-              className={classes.userListEdit}
+              className={classes.manageListDetail}
             >
-              Edit
+              View Detail
             </Link>
             <Link
               to={"/posts/" + params.row.id}
-              className={classes.userListDelete}
+              className={classes.manageListDelete}
               onClick={() => handleDelete(params.row.id)}
             >
               Delete
-            </Link>
-            <Link
-              to={"/posts/" + params.row.id}
-              className={classes.userListPublish}
-            >
-              Publish
             </Link>
           </>
         );
@@ -87,8 +83,8 @@ const ManagePost = () => {
   ];
 
   return (
-    <div className={classes.userList}>
-      <div className={classes.userTitle}>
+    <div className={classes.manageList}>
+      <div className={classes.manageTitle}>
         Manage Post
         <Button
           variant="contained"
@@ -97,20 +93,20 @@ const ManagePost = () => {
           className={style.root}
           onClick={submitHandler}
         >
-          Add Post
+          Add Promotion
         </Button>
       </div>
       <DataGrid
-        rows={data}
-        disableSelectionOnClick
-        columns={columns}
-        pageSize={10}
-        checkboxSelection
-        autoPageSize={true}
         autoHeight
+        autoPageSize={true}
+        checkboxSelection
+        columns={columns}
+        disableSelectionOnClick
+        pageSize={10}
+        rows={data}
       />
     </div>
   );
 };
 
-export default ManagePost;
+export default ManagePromotion;
