@@ -6,6 +6,7 @@
   position: sticky;
   top: 0;
   z-index: 999;
+
 }
 
 .navbarWrapper {
@@ -16,17 +17,23 @@
   justify-content: space-between;
 }
 
-.logo {
+.navbarLeft {
+  display: flex;
+  align-items: center;
+}
+
+.navTitle {
   font-weight: 500;
   font-size: 24px;
   color: white;
-  cursor: pointer;
+  align-items: center;
 }
 
 .navLogo {
   width: 50px;
   height: 50px;
-  cursor: pointer;
+  margin-right: 8px;
+  border-radius: 10px;
 }
 
 .navRight {

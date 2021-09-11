@@ -8,13 +8,18 @@ const Navbar = (props: Props) => {
   return (
     <div className={classes.navbar}>
       <div className={classes.navbarWrapper}>
-        <div>
-          {/* <img
-            src="/public/assets/bpt-logo.jpg"
+        <div className={classes.navbarLeft}>
+          <img
+            src="/assets/images/mophLogo.png"
             alt="test"
             className={classes.navLogo}
-          /> */}
-          <span className={classes.logo}>BUMBUTPITAL</span>
+          />
+          <img
+            src="/assets/images/BPTLogo.png"
+            alt="test"
+            className={classes.navLogo}
+          />
+          <h2 className={classes.navTitle}>BUMBUTPITAL</h2>
         </div>
         <div className={classes.navRight}>
           <img
