@@ -39,7 +39,7 @@ const Sidebar = (props: Props) => {
         <div className={classes.sidebarMenu}>
           <h3 className={classes.sidebarTitle}>Video</h3>
           <ul className={classes.sidebarList}>
-            <Link to="/video" className={classes.sidebarLink}>
+            <Link to="/videos" className={classes.sidebarLink}>
               <li className={classes.sidebarListItem}>Manage Video</li>
             </Link>
           </ul>
@@ -47,7 +47,7 @@ const Sidebar = (props: Props) => {
         <div className={classes.sidebarMenu}>
           <h3 className={classes.sidebarTitle}>Users</h3>
           <ul className={classes.sidebarList}>
-            <Link to="/user" className={classes.sidebarLink}>
+            <Link to="/users" className={classes.sidebarLink}>
               <li className={classes.sidebarListItem}>Manage Users</li>
             </Link>
           </ul>
@@ -55,7 +55,7 @@ const Sidebar = (props: Props) => {
         <div className={classes.sidebarMenu}>
           <h3 className={classes.sidebarTitle}>Promotion</h3>
           <ul className={classes.sidebarList}>
-            <Link to="/promotion" className={classes.sidebarLink}>
+            <Link to="/promotions" className={classes.sidebarLink}>
               <li className={classes.sidebarListItem}>Manage Promotion</li>
             </Link>
           </ul>
