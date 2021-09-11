@@ -6,7 +6,10 @@ import Home from "./app/home/Home";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Landing from "./app/landing/Landing";
 import Authen from "./app/auth/Authen";
-import ManagePost from "./app/content/ManagePost";
+import ManagePost from "./app/management/Post";
+import ManageVideo from "./app/management/Video";
+import ManageUser from "./app/management/User";
+import ManagePromotion from "./app/management/Promotion";
 
 function App() {
   return (
@@ -21,7 +24,7 @@ function App() {
             <Route exact path="/auth">
               <Authen />
             </Route>
-            
+        
             <Router>
               <Sidebar />
               <Route path="/home">
@@ -29,6 +32,15 @@ function App() {
               </Route>
               <Route path="/posts">
                 <ManagePost />
+              </Route>
+              <Route path="/videos">
+                <ManageVideo />
+              </Route>
+              <Route path="/users">
+                <ManageUser />
+              </Route>
+              <Route path="/promotions">
+                <ManagePromotion />
               </Route>
             </Router>
           </Switch>
