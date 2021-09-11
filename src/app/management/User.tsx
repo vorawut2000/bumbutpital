@@ -59,7 +59,7 @@ const ManageUser = () => {
           <>
             <Link
               to={"/posts/" + params.row.id}
-              className={classes.manageListEdit}
+              className={classes.manageListDetail}
             >
               View Detail
             </Link>
