@@ -93,7 +93,7 @@ const ManagePost = () => {
   return (
     <div className={classes.manageList}>
       <div className={classes.manageTitle}>
-        Manage Post
+        Post Management
         <Button
           variant="contained"
           color="primary"

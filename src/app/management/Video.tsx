@@ -97,7 +97,7 @@ const ManageVideo = () => {
   return (
     <div className={classes.manageList}>
       <div className={classes.manageTitle}>
-        Manage Post
+        Video Management
         <Button
           variant="contained"
           color="primary"

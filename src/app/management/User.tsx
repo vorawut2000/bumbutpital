@@ -79,7 +79,7 @@ const ManageUser = () => {
   return (
     <div className={classes.manageList}>
       <div className={classes.manageTitle}>
-        Manage Post
+        User Management
         <Button
           variant="contained"
           color="primary"

@@ -85,7 +85,7 @@ const ManagePromotion = () => {
   return (
     <div className={classes.manageList}>
       <div className={classes.manageTitle}>
-        Manage Post
+        Promotion Management
         <Button
           variant="contained"
           color="primary"

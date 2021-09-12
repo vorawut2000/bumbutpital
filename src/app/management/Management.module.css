@@ -52,3 +52,14 @@
   font-weight: 600;
   padding-bottom: 20px;
 }
+
+.manageItem {
+  display: flex;
+  flex: 4;
+  flex-direction: column;
+}
+
+.categoryList {
+  display: grid;
+  
+}
