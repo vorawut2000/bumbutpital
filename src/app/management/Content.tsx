@@ -18,7 +18,7 @@ const useStyles = makeStyles({
 });
 
 //have to change type!!!!
-const ManagePost = () => {
+const ManageContent = () => {
   const history = useHistory();
   const style = useStyles();
   const [data, setData] = useState(contentData);
@@ -28,11 +28,15 @@ const ManagePost = () => {
   };
 
   const submitHandler = () => {
-    history.push("/home");
+    history.push("/content/createContent");
   };
 
   const columns = [
-    { field: "id", headerName: "No.", width: 190 },
+    {
+      field: "id",
+      headerName: "No.",
+      width: 190,
+    },
     {
       field: "title",
       headerName: "Title",
@@ -62,21 +66,21 @@ const ManagePost = () => {
         return (
           <>
             <Link
-              to={"/posts/" + params.row.id}
-              className={classes.userListEdit}
+              to={"/contents/" + params.row.id}
+              className={classes.manageListEdit}
             >
               Edit
             </Link>
             <Link
-              to={"/posts/" + params.row.id}
-              className={classes.userListDelete}
+              to={"/contents/" + params.row.id}
+              className={classes.manageListDelete}
               onClick={() => handleDelete(params.row.id)}
             >
               Delete
             </Link>
             <Link
-              to={"/posts/" + params.row.id}
-              className={classes.userListPublish}
+              to={"/contents/" + params.row.id}
+              className={classes.manageListPublish}
             >
               Publish
             </Link>
@@ -87,9 +91,9 @@ const ManagePost = () => {
   ];
 
   return (
-    <div className={classes.userList}>
-      <div className={classes.userTitle}>
-        Manage Post
+    <div className={classes.manageList}>
+      <div className={classes.manageTitle}>
+        Content Management
         <Button
           variant="contained"
           color="primary"
@@ -97,20 +101,20 @@ const ManagePost = () => {
           className={style.root}
           onClick={submitHandler}
         >
-          Add Post
+          Add Content
         </Button>
       </div>
       <DataGrid
-        rows={data}
-        disableSelectionOnClick
-        columns={columns}
-        pageSize={10}
-        checkboxSelection
-        autoPageSize={true}
         autoHeight
+        autoPageSize={true}
+        checkboxSelection
+        columns={columns}
+        disableSelectionOnClick
+        pageSize={10}
+        rows={data}
       />
     </div>
   );
 };
 
-export default ManagePost;
+export default ManageContent;
