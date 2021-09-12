@@ -10,6 +10,8 @@ import ManagePost from "./app/management/Post";
 import ManageVideo from "./app/management/Video";
 import ManageUser from "./app/management/User";
 import ManagePromotion from "./app/management/Promotion";
+import ManageCategory from "./app/management/Category";
+import Dashboard from "./app/home/Dashboard";
 
 function App() {
   return (
@@ -24,7 +26,7 @@ function App() {
             <Route exact path="/auth">
               <Authen />
             </Route>
-        
+
             <Router>
               <Sidebar />
               <Route exact path="/home">
@@ -32,6 +34,9 @@ function App() {
               </Route>
               <Route path="/posts">
                 <ManagePost />
+              </Route>
+              <Route path="/postCategories">
+                <ManageCategory />
               </Route>
               <Route path="/videos">
                 <ManageVideo />
