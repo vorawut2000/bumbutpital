@@ -98,6 +98,23 @@ export const videoData = [
   },
 ];
 
+export const categoryData = [
+  {
+    id: 1,
+    categories: "Depression",
+    username: "Vorawut",
+    role: "Admin",
+    date: "30 April 2021",
+  },
+  {
+    id: 2,
+    categories: "Depression",
+    username: "Vorawut",
+    role: "Admin",
+    date: "30 April 2021",
+  },
+];
+
 export const userData = [
   {
     id: 1,
