@@ -6,12 +6,12 @@ import Home from "./app/home/Home";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Landing from "./app/landing/Landing";
 import Authen from "./app/auth/Authen";
-import ManagePost from "./app/management/Post";
 import ManageVideo from "./app/management/Video";
 import ManageUser from "./app/management/User";
 import ManagePromotion from "./app/management/Promotion";
 import ManageCategory from "./app/management/Category";
-import Dashboard from "./app/home/Dashboard";
+import AddContent from "./app/content/AddContent";
+import ManageContent from "./app/management/Content";
 
 function App() {
   return (
@@ -32,8 +32,11 @@ function App() {
               <Route exact path="/home">
                 <Home />
               </Route>
-              <Route path="/posts">
-                <ManagePost />
+              <Route path="/contents">
+                <ManageContent />
+              </Route>
+              <Route path="/content/createContent">
+                <AddContent />
               </Route>
               <Route path="/postCategories">
                 <ManageCategory />
