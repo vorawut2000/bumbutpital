@@ -1,9 +1,10 @@
 import React from "react";
 import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
-import { Grid, Paper, TextField, Typography } from "@material-ui/core";
+import { Grid, TextField, Typography } from "@material-ui/core";
 import PublishCard from "../../components/addContentCard/PublishCard";
 import SelectCategoryCard from "../../components/addContentCard/SelectCategoryCard";
 import SelectDepressionCard from "../../components/addContentCard/SelectDepressionCard";
+import UploadCard from "../../components/addContentCard/UploadCard";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -84,6 +85,7 @@ const AddContent = () => {
             multiline
             rows={20}
           />
+          <UploadCard/>
         </Grid>
         <Grid item xs={3}>
           <PublishCard />
