@@ -1,5 +1,6 @@
 import React from "react";
 import {
+  Avatar,
   Button,
   Card,
   CardActions,
@@ -15,7 +16,7 @@ const useStyles = makeStyles((theme: Theme) =>
     root: {
       display: "flex",
       padding: "24px",
-      justifyContent: "space-between"
+      justifyContent: "space-between",
     },
     question: {
       fontSize: "24px",
@@ -43,27 +44,28 @@ const useStyles = makeStyles((theme: Theme) =>
       flexDirection: "column",
       alignItems: "center",
     },
-    shape: {
+    messageNumber: {
       backgroundColor: "#63EA89",
-      padding: "25px",
-    },
-    shapeCircle: {
-      borderRadius: "50%",
+      width: "60px",
+      height: "60px",
     },
     buttonAnswer: {
       padding: "10px",
       marginRight: "16px",
       background: "#3CA75A",
+      color: "white",
     },
     buttonPinned: {
       padding: "10px",
       marginRight: "16px",
       background: "#6367EA",
+      color: "white",
     },
     buttonUrgent: {
       padding: "10px",
       marginRight: "16px",
       background: "#EA6363",
+      color: "white",
     },
     answer: {
       fontSize: "14px",
@@ -74,10 +76,6 @@ const useStyles = makeStyles((theme: Theme) =>
 
 const ForumCard = () => {
   const classes = useStyles();
-
-  const circle = (
-    <div className={clsx(classes.shape, classes.shapeCircle)}>1</div>
-  );
 
   return (
     <Card variant="outlined" className={classes.root}>
@@ -116,7 +114,7 @@ const ForumCard = () => {
           justifyContent="flex-start"
           alignItems="center"
         >
-          {circle}
+          <Avatar className={classes.messageNumber}>1</Avatar>
           <Typography
             variant="body1"
             component="h5"
@@ -132,22 +130,13 @@ const ForumCard = () => {
           justifyContent="center"
           alignItems="flex-start"
         >
-          <Button
-            variant="contained"
-            className={classes.buttonAnswer}
-          >
+          <Button variant="contained" className={classes.buttonAnswer}>
             Answer
           </Button>
-          <Button
-            variant="contained"
-            className={classes.buttonPinned}
-          >
+          <Button variant="contained" className={classes.buttonPinned}>
             Pin
           </Button>
-          <Button
-            variant="contained"
-            className={classes.buttonUrgent}
-          >
+          <Button variant="contained" className={classes.buttonUrgent}>
             Urgent
           </Button>
         </Grid>
