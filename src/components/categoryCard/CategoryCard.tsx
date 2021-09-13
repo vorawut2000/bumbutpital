@@ -38,18 +38,18 @@ const CategoryCard: React.FC<{ onClick: any }>  = ({ onClick }) => {
     <Card className={classes.root}>
       <CardHeader
         title={
-          <Typography className={classes.title}>Add Youtube Link</Typography>
+          <Typography className={classes.title}>Add Category</Typography>
         }
         className={classes.header}
       />
       <CardContent>
         <TextField
-          label="Title"
+          label="New category"
           variant="outlined"
           color="primary"
           fullWidth
           required
-          id="title"
+          id="category"
         />
       </CardContent>
       <CardActions className={classes.action}>

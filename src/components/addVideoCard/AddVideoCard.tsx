@@ -29,6 +29,9 @@ const useStyles = makeStyles((theme: Theme) =>
       float: "right",
       padding: "16px",
     },
+    field: {
+      marginBottom: "10px"
+    },
   })
 );
 
@@ -44,12 +47,31 @@ const AddVideoCard: React.FC<{ onClick: any }> = ({ onClick }) => {
       />
       <CardContent>
         <TextField
-          label="Title"
+          label="Link"
           variant="outlined"
           color="primary"
           fullWidth
           required
-          id="title"
+          id="link"
+          className={classes.field}
+        />
+        <TextField
+          label="Description"
+          variant="outlined"
+          color="primary"
+          fullWidth
+          required
+          id="link"
+          className={classes.field}
+        />
+        <TextField
+          label="Video length"
+          variant="outlined"
+          color="primary"
+          fullWidth
+          required
+          id="Video length"
+          className={classes.field}
         />
       </CardContent>
       <CardActions className={classes.action}>
