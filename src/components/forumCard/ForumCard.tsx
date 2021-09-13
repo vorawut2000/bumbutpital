@@ -1,14 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Avatar,
+  Backdrop,
   Button,
   Card,
   CardActions,
   CardContent,
   Grid,
+  Modal,
   Typography,
 } from "@material-ui/core";
 import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
+import AnswerCard from "./AnswerCard";
+import UrgentCard from "./UrgentCard";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -70,11 +74,36 @@ const useStyles = makeStyles((theme: Theme) =>
       fontSize: "14px",
       fontWeight: 600,
     },
+    backdrop: {
+      zIndex: theme.zIndex.drawer + 1,
+      color: "#fff",
+    },
+    modal: {
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+    },
   })
 );
 
 const ForumCard = () => {
   const classes = useStyles();
+  const [openAnswer, setOpenAnswer] = useState(false);
+  const [openUrgent, setOpenUrgent] = useState(false);
+
+  const handleAnswerBackdrop = () => {
+    setOpenAnswer(false);
+  };
+  const handleAnswer = () => {
+    setOpenAnswer(!openAnswer);
+  };
+
+  const handleUrgentBackdrop = () => {
+    setOpenUrgent(false);
+  };
+  const handleUrgent = () => {
+    setOpenUrgent(!openUrgent);
+  };
 
   return (
     <Card variant="outlined" className={classes.root}>
@@ -129,15 +158,42 @@ const ForumCard = () => {
           justifyContent="center"
           alignItems="flex-start"
         >
-          <Button variant="contained" className={classes.buttonAnswer}>
+          <Button
+            variant="contained"
+            className={classes.buttonAnswer}
+            onClick={handleAnswer}
+          >
             Answer
           </Button>
+          <Modal
+            open={openAnswer}
+            className={classes.modal}
+            onClose={handleAnswerBackdrop}
+            aria-labelledby="simple-modal-title"
+            aria-describedby="simple-modal-description"
+          >
+            <AnswerCard onClick={handleAnswerBackdrop} />
+          </Modal>
           <Button variant="contained" className={classes.buttonPinned}>
             Pin
           </Button>
-          <Button variant="contained" className={classes.buttonUrgent}>
+
+          <Button
+            variant="contained"
+            className={classes.buttonUrgent}
+            onClick={handleUrgent}
+          >
             Urgent
           </Button>
+          <Modal
+            open={openUrgent}
+            className={classes.modal}
+            onClose={handleUrgentBackdrop}
+            aria-labelledby="simple-modal-title"
+            aria-describedby="simple-modal-description"
+          >
+            <UrgentCard onClick={handleUrgentBackdrop} />
+          </Modal>
         </Grid>
       </CardActions>
     </Card>
