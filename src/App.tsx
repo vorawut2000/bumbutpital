@@ -12,6 +12,7 @@ import ManagePromotion from "./app/management/Promotion";
 import ManageCategory from "./app/management/Category";
 import AddContent from "./app/content/AddContent";
 import ManageContent from "./app/management/Content";
+import Forum from "./app/forum/Forum";
 
 function App() {
   return (
@@ -31,6 +32,9 @@ function App() {
               <Sidebar />
               <Route exact path="/home">
                 <Home />
+              </Route>
+              <Route path="/forum">
+                <Forum />
               </Route>
               <Route path="/contents">
                 <ManageContent />

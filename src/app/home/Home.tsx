@@ -1,8 +1,8 @@
 import React from "react";
-import Chart from "../../components/chart/Chart";
-import ContentCard from "../../components/contentCard/ContentCard";
-import ForumCard from "../../components/forumCard/ForumCard";
-import OverviewInfo from "../../components/overviewInfo/OverviewInfo";
+import Chart from "../../components/dashboardCard/Chart";
+import ContentCard from "../../components/dashboardCard/ContentCard";
+import OverviewInfo from "../../components/dashboardCard/OverviewInfo";
+import ForumCard from "../../components/dashboardCard/ForumCard";
 import classes from "./Home.module.css";
 
 interface Props {}
