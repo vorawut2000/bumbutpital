@@ -4,12 +4,39 @@ import { categoryData } from "../../dummyData";
 import { DataGrid } from "@mui/x-data-grid";
 import { Link } from "react-router-dom";
 import CategoryCard from "../../components/categoryCard/CategoryCard";
+import { Backdrop, Button } from "@material-ui/core";
+import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
+
+const useStyles = makeStyles((theme: Theme) =>
+  createStyles({
+    root: {
+      background: "#6367EA",
+      borderRadius: 5,
+      border: 0,
+      color: "white",
+      height: 36,
+      float: "right",
+    },
+    backdrop: {
+      zIndex: theme.zIndex.drawer + 1,
+      color: "#fff",
+    },
+  })
+);
 
 const ManageCategory = () => {
+  const style = useStyles();
   const [data, setData] = useState(categoryData);
+  const [open, setOpen] = React.useState(false);
 
   const handleDelete = (id: any) => {
     setData(data.filter((item) => item.id !== id));
+  };
+  const handleClose = () => {
+    setOpen(false);
+  };
+  const handleToggle = () => {
+    setOpen(!open);
   };
 
   const columns = [
@@ -66,7 +93,21 @@ const ManageCategory = () => {
 
   return (
     <div className={classes.manageList}>
-      <div className={classes.manageTitle}>Categories Management</div>
+      <div className={classes.manageTitle}>
+        Categories Managemen
+        <Button
+          variant="contained"
+          color="primary"
+          size="large"
+          className={style.root}
+          onClick={handleToggle}
+        >
+          Add Category
+        </Button>
+        <Backdrop className={style.backdrop} open={open}>
+          <CategoryCard onClick={handleClose} />
+        </Backdrop>
+      </div>
       <DataGrid
         rows={data}
         disableSelectionOnClick
@@ -76,10 +117,6 @@ const ManageCategory = () => {
         autoPageSize={true}
         autoHeight
       />
-      {/* change to backdrop */}
-      {/* <Grid item xs={4}>
-          <CategoryCard />
-        </Grid> */}
     </div>
   );
 };

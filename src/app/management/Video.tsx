@@ -1,33 +1,42 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import classes from "./Management.module.css";
 import { videoData } from "../../dummyData";
-import { Button, makeStyles } from "@material-ui/core";
+import { Backdrop, Button, createStyles, makeStyles, Theme } from "@material-ui/core";
 import { DataGrid } from "@mui/x-data-grid";
-import { Link, useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Link as LinkMui } from "@material-ui/core";
+import AddVideoCard from "../../components/addVideoCard/AddVideoCard";
 
-const useStyles = makeStyles({
-  root: {
-    background: "#6367EA",
-    borderRadius: 5,
-    border: 0,
-    color: "white",
-    height: 36,
-    float: "right",
-  },
-});
+const useStyles = makeStyles((theme: Theme) =>
+  createStyles({
+    root: {
+      background: "#6367EA",
+      borderRadius: 5,
+      border: 0,
+      color: "white",
+      height: 36,
+      float: "right",
+    },
+    backdrop: {
+      zIndex: theme.zIndex.drawer + 1,
+      color: "#fff",
+    },
+  })
+);
 
 const ManageVideo = () => {
-  const history = useHistory();
   const style = useStyles();
   const [data, setData] = useState(videoData);
+  const [open, setOpen] = React.useState(false);
 
   const handleDelete = (id: any) => {
     setData(data.filter((item) => item.id !== id));
   };
-
-  const submitHandler = () => {
-    history.push("/home");
+  const handleClose = () => {
+    setOpen(false);
+  };
+  const handleToggle = () => {
+    setOpen(!open);
   };
 
   const columns = [
@@ -53,10 +62,7 @@ const ManageVideo = () => {
       renderCell: (params: any) => {
         return (
           <>
-            <LinkMui
-              href={params.row.link}
-              className={classes.manageListEdit}
-            >
+            <LinkMui href={params.row.link} className={classes.manageListEdit}>
               Link
             </LinkMui>
           </>
@@ -103,10 +109,13 @@ const ManageVideo = () => {
           color="primary"
           size="large"
           className={style.root}
-          onClick={submitHandler}
+          onClick={handleToggle}
         >
           Add Video
         </Button>
+        <Backdrop className={style.backdrop} open={open} >
+          <AddVideoCard onClick={handleClose}/>
+        </Backdrop>
       </div>
       <DataGrid
         rows={data}

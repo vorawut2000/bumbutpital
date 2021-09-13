@@ -32,7 +32,7 @@ const useStyles = makeStyles((theme: Theme) =>
   })
 );
 
-const CategoryCard: React.FC<{ onClick: any }>  = ({ onClick }) => {
+const AddVideoCard: React.FC<{ onClick: any }> = ({ onClick }) => {
   const classes = useStyles();
   return (
     <Card className={classes.root}>
@@ -59,11 +59,11 @@ const CategoryCard: React.FC<{ onClick: any }>  = ({ onClick }) => {
           color="primary"
           onClick={onClick}
         >
-          Add category
+          Post Link
         </Button>
       </CardActions>
     </Card>
   );
 };
 
-export default CategoryCard;
+export default AddVideoCard;
