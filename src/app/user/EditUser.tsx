@@ -13,7 +13,6 @@ import {
   Typography,
 } from "@material-ui/core";
 import { Person } from "@material-ui/icons";
-import { useHistory } from "react-router-dom";
 import Chart from "../../components/dashboardCard/Chart";
 import ForumCard from "../../components/forumCard/ForumCard";
 import OverviewInfo from "../../components/dashboardCard/OverviewInfo";
@@ -64,7 +63,7 @@ const useStyles = makeStyles((theme: Theme) =>
     avatar: {
       width: "160px",
       height: "160px",
-      marginLeft: "210px"
+      marginLeft: "210px",
     },
     avatarIcon: {
       width: "120px",
@@ -75,16 +74,11 @@ const useStyles = makeStyles((theme: Theme) =>
 
 const EditUser = () => {
   const classes = useStyles();
-  const history = useHistory();
 
   const [value, setValue] = useState("female");
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setValue((event.target as HTMLInputElement).value);
-  };
-
-  const submitHandler = () => {
-    history.push("/user/moreProfile");
   };
 
   return (
@@ -100,9 +94,9 @@ const EditUser = () => {
       >
         <Grid item xs={6}>
           <Paper className={classes.paper} elevation={0}>
-          <Avatar className={classes.avatar}>
-            <Person className={classes.avatarIcon} />
-          </Avatar>
+            <Avatar className={classes.avatar}>
+              <Person className={classes.avatarIcon} />
+            </Avatar>
             <Typography gutterBottom className={classes.profileTitle}>
               Username:
             </Typography>
