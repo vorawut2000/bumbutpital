@@ -50,19 +50,19 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     buttonAnswer: {
       padding: "10px",
-      marginRight: "16px",
+      margin: "8px",
       background: "#3CA75A",
       color: "white",
     },
     buttonPinned: {
       padding: "10px",
-      marginRight: "16px",
+      margin: "8px",
       background: "#6367EA",
       color: "white",
     },
     buttonUrgent: {
       padding: "10px",
-      marginRight: "16px",
+      margin: "8px",
       background: "#EA6363",
       color: "white",
     },
