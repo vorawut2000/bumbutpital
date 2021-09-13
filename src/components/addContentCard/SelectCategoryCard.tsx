@@ -8,7 +8,6 @@ import {
   FormControl,
   FormControlLabel,
   FormGroup,
-  FormLabel,
   Paper,
   Typography,
 } from "@material-ui/core";

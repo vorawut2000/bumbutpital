@@ -1,13 +1,10 @@
 import React, { useState } from "react";
 import {
   Card,
-  CardActions,
   CardActionArea,
-  CardContent,
   CardMedia,
   Typography,
   makeStyles,
-  Box,
   TextField,
   CardHeader,
   createStyles,
@@ -51,7 +48,6 @@ const useStyles = makeStyles((theme: Theme) =>
 const UploadCard = () => {
   const classes = useStyles();
   const [file, setFile] = useState("");
-  const [text, setText] = useState("");
 
   const handleChange = (e: any) => {
     let url = URL.createObjectURL(e.target.files[0]);
