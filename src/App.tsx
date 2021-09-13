@@ -14,6 +14,7 @@ import AddContent from "./app/content/AddContent";
 import ManageContent from "./app/management/Content";
 import Forum from "./app/forum/Forum";
 import AddUser from "./app/user/AddUser";
+import EditUser from "./app/user/EditUser";
 
 function App() {
   return (
@@ -55,6 +56,7 @@ function App() {
               <Route path="/user/createUser">
                 <AddUser />
               </Route>
+              <Route path="/user/edit/:id" component={EditUser}/>
               <Route path="/promotions">
                 <ManagePromotion />
               </Route>
