@@ -26,7 +26,7 @@ const ManageUser = () => {
   };
 
   const submitHandler = () => {
-    history.push("/home");
+    history.push("/user/createUser");
   };
 
   const columns = [
