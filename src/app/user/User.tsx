@@ -25,7 +25,7 @@ const User = () => {
         gutterBottom
         className={classes.title}
       >
-        Forum
+        User Profile
       </Typography>
     </div>
   );

@@ -13,6 +13,10 @@ import {
   Typography,
 } from "@material-ui/core";
 import { Person } from "@material-ui/icons";
+import { useHistory } from "react-router-dom";
+import Chart from "../../components/dashboardCard/Chart";
+import ForumCard from "../../components/forumCard/ForumCard";
+import OverviewInfo from "../../components/dashboardCard/OverviewInfo";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -60,6 +64,7 @@ const useStyles = makeStyles((theme: Theme) =>
     avatar: {
       width: "160px",
       height: "160px",
+      marginLeft: "210px"
     },
     avatarIcon: {
       width: "120px",
@@ -70,6 +75,7 @@ const useStyles = makeStyles((theme: Theme) =>
 
 const EditUser = () => {
   const classes = useStyles();
+  const history = useHistory();
 
   const [value, setValue] = useState("female");
 
@@ -77,152 +83,156 @@ const EditUser = () => {
     setValue((event.target as HTMLInputElement).value);
   };
 
+  const submitHandler = () => {
+    history.push("/user/moreProfile");
+  };
+
   return (
     <div className={classes.root}>
       <Typography gutterBottom className={classes.title}>
         Edit User
-        <Button
-          variant="contained"
-          color="primary"
-          size="large"
-          className={classes.button}
-        >
-          Advance Profile
-        </Button>
       </Typography>
       <Grid
         container
-        direction="column"
+        direction="row"
         justifyContent="center"
-        alignItems="center"
+        alignItems="flex-start"
       >
-        <Avatar className={classes.avatar}>
-          <Person className={classes.avatarIcon} />
-        </Avatar>
-        <Paper className={classes.paper} elevation={0}>
-          <Typography gutterBottom className={classes.profileTitle}>
-            Username:
-          </Typography>
-          <TextField
-            className={classes.field}
-            fullWidth
-            label="Username"
-            variant="outlined"
-            color="primary"
-            size="medium"
-            required
-            id="Username"
-          />
-          <Typography gutterBottom className={classes.profileTitle}>
-            First Name:
-          </Typography>
-          <TextField
-            className={classes.field}
-            fullWidth
-            label="First Name"
-            variant="outlined"
-            color="primary"
-            size="medium"
-            required
-            id="firstName"
-          />
-          <Typography gutterBottom className={classes.profileTitle}>
-            Last Name:
-          </Typography>
-          <TextField
-            className={classes.field}
-            fullWidth
-            label="Last Name"
-            variant="outlined"
-            color="primary"
-            size="medium"
-            required
-            id="lastName"
-          />
-          <Typography gutterBottom className={classes.profileTitle}>
-            Nickname:
-          </Typography>
-          <TextField
-            className={classes.field}
-            fullWidth
-            label="Nickname"
-            variant="outlined"
-            color="primary"
-            size="medium"
-            required
-            id="nickname"
-          />
-          <Typography gutterBottom className={classes.profileTitle}>
-            Email:
-          </Typography>
-          <TextField
-            className={classes.field}
-            fullWidth
-            label="Email"
-            variant="outlined"
-            color="primary"
-            size="medium"
-            required
-            id="Email"
-          />
-          <Typography gutterBottom className={classes.profileTitle}>
-            Phone Number:
-          </Typography>
-          <TextField
-            className={classes.field}
-            fullWidth
-            label="Phone Number"
-            variant="outlined"
-            color="primary"
-            size="medium"
-            required
-            id="phoneNumber"
-          />
-        </Paper>
-        <Paper className={classes.paper} elevation={0}>
-          <Typography gutterBottom className={classes.profileTitle}>
-            User Type Role:
-          </Typography>
-          <FormControl component="fieldset">
-            <RadioGroup
-              row
-              aria-label="userType"
-              name="gender1"
-              value={value}
-              onChange={handleChange}
+        <Grid item xs={6}>
+          <Paper className={classes.paper} elevation={0}>
+          <Avatar className={classes.avatar}>
+            <Person className={classes.avatarIcon} />
+          </Avatar>
+            <Typography gutterBottom className={classes.profileTitle}>
+              Username:
+            </Typography>
+            <TextField
+              className={classes.field}
+              fullWidth
+              label="Username"
+              variant="outlined"
+              color="primary"
+              size="medium"
+              required
+              id="Username"
+            />
+            <Typography gutterBottom className={classes.profileTitle}>
+              First Name:
+            </Typography>
+            <TextField
+              className={classes.field}
+              fullWidth
+              label="First Name"
+              variant="outlined"
+              color="primary"
+              size="medium"
+              required
+              id="firstName"
+            />
+            <Typography gutterBottom className={classes.profileTitle}>
+              Last Name:
+            </Typography>
+            <TextField
+              className={classes.field}
+              fullWidth
+              label="Last Name"
+              variant="outlined"
+              color="primary"
+              size="medium"
+              required
+              id="lastName"
+            />
+            <Typography gutterBottom className={classes.profileTitle}>
+              Nickname:
+            </Typography>
+            <TextField
+              className={classes.field}
+              fullWidth
+              label="Nickname"
+              variant="outlined"
+              color="primary"
+              size="medium"
+              required
+              id="nickname"
+            />
+            <Typography gutterBottom className={classes.profileTitle}>
+              Email:
+            </Typography>
+            <TextField
+              className={classes.field}
+              fullWidth
+              label="Email"
+              variant="outlined"
+              color="primary"
+              size="medium"
+              required
+              id="Email"
+            />
+            <Typography gutterBottom className={classes.profileTitle}>
+              Phone Number:
+            </Typography>
+            <TextField
+              className={classes.field}
+              fullWidth
+              label="Phone Number"
+              variant="outlined"
+              color="primary"
+              size="medium"
+              required
+              id="phoneNumber"
+            />
+          </Paper>
+          <Paper className={classes.paper} elevation={0}>
+            <Typography gutterBottom className={classes.profileTitle}>
+              User Type Role:
+            </Typography>
+            <FormControl component="fieldset">
+              <RadioGroup
+                row
+                aria-label="userType"
+                name="gender1"
+                value={value}
+                onChange={handleChange}
+              >
+                <FormControlLabel
+                  value="basicUser"
+                  control={<Radio color="primary" />}
+                  label="Basic User"
+                />
+                <FormControlLabel
+                  value="SystemAdministrator"
+                  control={<Radio color="primary" />}
+                  label="System Administrator"
+                />
+                <FormControlLabel
+                  value="moph"
+                  control={<Radio color="primary" />}
+                  label="Ministry of Public Health Staff"
+                />
+              </RadioGroup>
+            </FormControl>
+            <Grid
+              container
+              direction="row"
+              justifyContent="space-between"
+              alignItems="center"
+              className={classes.buttonGroup}
             >
-              <FormControlLabel
-                value="basicUser"
-                control={<Radio color="primary" />}
-                label="Basic User"
-              />
-              <FormControlLabel
-                value="SystemAdministrator"
-                control={<Radio color="primary" />}
-                label="System Administrator"
-              />
-              <FormControlLabel
-                value="moph"
-                control={<Radio color="primary" />}
-                label="Ministry of Public Health Staff"
-              />
-            </RadioGroup>
-          </FormControl>
-          <Grid
-            container
-            direction="row"
-            justifyContent="space-between"
-            alignItems="center"
-            className={classes.buttonGroup}
-          >
-            <Button color="secondary" size="large">
-              Cancel
-            </Button>
-            <Button variant="contained" color="primary" size="large">
-              Edit
-            </Button>
-          </Grid>
-        </Paper>
+              <Button color="secondary" size="large">
+                Cancel
+              </Button>
+              <Button variant="contained" color="primary" size="large">
+                Edit
+              </Button>
+            </Grid>
+          </Paper>
+        </Grid>
+        <Grid item xs={6}>
+          <Chart />
+          {/* will change later */}
+          <OverviewInfo />
+          <ForumCard />
+        </Grid>
       </Grid>
     </div>
   );
