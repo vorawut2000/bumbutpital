@@ -13,6 +13,7 @@ import ManageCategory from "./app/management/Category";
 import AddContent from "./app/content/AddContent";
 import ManageContent from "./app/management/Content";
 import Forum from "./app/forum/Forum";
+import AddUser from "./app/user/AddUser";
 
 function App() {
   return (
@@ -50,6 +51,9 @@ function App() {
               </Route>
               <Route path="/users">
                 <ManageUser />
+              </Route>
+              <Route path="/user/createUser">
+                <AddUser />
               </Route>
               <Route path="/promotions">
                 <ManagePromotion />
