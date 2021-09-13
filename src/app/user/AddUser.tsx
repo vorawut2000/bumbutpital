@@ -55,7 +55,7 @@ const useStyles = makeStyles((theme: Theme) =>
 const AddUser = () => {
   const classes = useStyles();
 
-  const [value, setValue] = useState("female");
+  const [value, setValue] = useState("Basic User");
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setValue((event.target as HTMLInputElement).value);
