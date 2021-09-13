@@ -27,7 +27,7 @@ const ManagePromotion = () => {
   };
 
   const submitHandler = () => {
-    history.push("/home");
+    history.push("/promotion/add");
   };
 
   const columns = [

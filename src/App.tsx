@@ -15,6 +15,7 @@ import ManageContent from "./app/management/Content";
 import Forum from "./app/forum/Forum";
 import AddUser from "./app/user/AddUser";
 import EditUser from "./app/user/EditUser";
+import AddPromotion from "./app/promotion/AddPromotion";
 
 function App() {
   return (
@@ -60,6 +61,7 @@ function App() {
               <Route path="/promotions">
                 <ManagePromotion />
               </Route>
+              <Route path="/promotion/add" component={AddPromotion}/>
             </Router>
           </Switch>
         </div>
