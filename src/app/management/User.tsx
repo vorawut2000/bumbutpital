@@ -58,13 +58,13 @@ const ManageUser = () => {
         return (
           <>
             <Link
-              to={"/posts/" + params.row.id}
+              to={"/user/" + params.row.id}
               className={classes.manageListDetail}
             >
               View Detail
             </Link>
             <Link
-              to={"/posts/" + params.row.id}
+              to={"/user/" + params.row.id}
               className={classes.manageListDelete}
               onClick={() => handleDelete(params.row.id)}
             >
