@@ -16,6 +16,8 @@ import { Person } from "@material-ui/icons";
 import Chart from "../../components/dashboardCard/Chart";
 import ForumCard from "../../components/forumCard/ForumCard";
 import OverviewInfo from "../../components/dashboardCard/OverviewInfo";
+import { GET_ALL_USERS } from "../../Graphql/Queries";
+import { useQuery } from "@apollo/client";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -80,6 +82,8 @@ const EditUser = () => {
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setValue((event.target as HTMLInputElement).value);
   };
+
+  const { data } = useQuery(GET_ALL_USERS);
 
   return (
     <div className={classes.root}>

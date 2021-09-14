@@ -6,7 +6,7 @@ import ForumCard from "../../components/forumCard/ForumCard";
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
-      flexGrow: 1,
+      flex: "auto",
     },
     title: {
       fontSize: "32px",
@@ -47,7 +47,7 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     question: {
       marginRight: "40px",
-    }
+    },
   })
 );
 
