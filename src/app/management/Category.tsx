@@ -94,7 +94,7 @@ const ManageCategory = () => {
   return (
     <div className={classes.manageList}>
       <div className={classes.manageTitle}>
-        Categories Managemen
+        Categories Management
         <Button
           variant="contained"
           color="primary"
