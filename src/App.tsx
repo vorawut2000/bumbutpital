@@ -47,7 +47,7 @@ function App() {
               <ApolloProvider client={client}>
                 {/* <Route path="/user" component={ManageUser} /> */}
                 <Route path="/users" component={ListOfUsers} />
-                <Route path="/user/createUser" component={AddUser} />
+                <Route path="/createUser" component={AddUser} />
                 <Route path="/user/:id" component={EditUser} />
               </ApolloProvider>
               <Route path="/promotions" component={ManagePromotion} />
@@ -57,6 +57,9 @@ function App() {
         </div>
       </div>
     </Router>
+
+
+
   );
 }
 
