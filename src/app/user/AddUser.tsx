@@ -12,6 +12,9 @@ import {
   TextField,
   Typography,
 } from "@material-ui/core";
+import { useMutation } from "@apollo/client";
+import { CREATE_USER } from "../../Graphql/Mutation";
+import { useHistory } from "react-router-dom";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -54,36 +57,49 @@ const useStyles = makeStyles((theme: Theme) =>
 
 const AddUser = () => {
   const classes = useStyles();
-
+  const history = useHistory();
   const [value, setValue] = useState("Basic User");
+  const [name, setName] = useState("");
+  const [surname, setSurname] = useState("");
+  const [userName, setUserName] = useState("");
+  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
+
+  const [createUser, { error }] = useMutation(CREATE_USER);
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setValue((event.target as HTMLInputElement).value);
   };
 
+  const submitHandler = () => {
+    createUser({
+      variables: {
+        name: name,
+        surname: surname,
+        username: userName,
+        password: password,
+        email: email,
+        phoneNumber: phoneNumber,
+      },
+    });
+    history.push("/users");
+  };
+
+  const cancelSubmitHandler = () => {
+    history.push("/users");
+  };
+
   return (
     <div className={classes.root}>
       <Typography gutterBottom className={classes.title}>
-        Create User
+        Create Staff Account
       </Typography>
       <Card className={classes.card} elevation={0}>
         <Typography gutterBottom className={classes.addUserTitle}>
           Profile
         </Typography>
         <Paper className={classes.paper} elevation={0}>
-          <Typography gutterBottom className={classes.profileTitle}>
-            Username:
-          </Typography>
-          <TextField
-            className={classes.field}
-            fullWidth
-            label="Username"
-            variant="outlined"
-            color="primary"
-            size="medium"
-            required
-            id="Username"
-          />
           <Typography gutterBottom className={classes.profileTitle}>
             First Name:
           </Typography>
@@ -96,6 +112,9 @@ const AddUser = () => {
             size="medium"
             required
             id="firstName"
+            onChange={(e) => {
+              setName(e.target.value);
+            }}
           />
           <Typography gutterBottom className={classes.profileTitle}>
             Last Name:
@@ -109,19 +128,57 @@ const AddUser = () => {
             size="medium"
             required
             id="lastName"
+            onChange={(e) => {
+              setSurname(e.target.value);
+            }}
           />
           <Typography gutterBottom className={classes.profileTitle}>
-            Nickname:
+            Username:
           </Typography>
           <TextField
             className={classes.field}
             fullWidth
-            label="Nickname"
+            label="Username"
             variant="outlined"
             color="primary"
             size="medium"
             required
-            id="nickname"
+            id="Username"
+            onChange={(e) => {
+              setUserName(e.target.value);
+            }}
+          />
+          <Typography gutterBottom className={classes.profileTitle}>
+            Email:
+          </Typography>
+          <TextField
+            className={classes.field}
+            fullWidth
+            label="Email"
+            variant="outlined"
+            color="primary"
+            size="medium"
+            required
+            id="email"
+            onChange={(e) => {
+              setEmail(e.target.value);
+            }}
+          />
+          <Typography gutterBottom className={classes.profileTitle}>
+            Phone Number:
+          </Typography>
+          <TextField
+            className={classes.field}
+            fullWidth
+            label="Phone Number"
+            variant="outlined"
+            color="primary"
+            size="medium"
+            required
+            id="phoneNumber"
+            onChange={(e) => {
+              setPhoneNumber(e.target.value);
+            }}
           />
         </Paper>
         <Typography gutterBottom className={classes.addUserTitle}>
@@ -139,11 +196,6 @@ const AddUser = () => {
               value={value}
               onChange={handleChange}
             >
-              <FormControlLabel
-                value="basicUser"
-                control={<Radio color="primary" />}
-                label="Basic User"
-              />
               <FormControlLabel
                 value="SystemAdministrator"
                 control={<Radio color="primary" />}
@@ -169,6 +221,9 @@ const AddUser = () => {
             size="medium"
             required
             id="password"
+            onChange={(e) => {
+              setPassword(e.target.value);
+            }}
           />
           <Typography gutterBottom className={classes.profileTitle}>
             Confirm password:
@@ -191,10 +246,19 @@ const AddUser = () => {
             alignItems="center"
             className={classes.buttonGroup}
           >
-            <Button color="secondary" size="large">
+            <Button
+              color="secondary"
+              size="large"
+              onClick={cancelSubmitHandler}
+            >
               Cancel
             </Button>
-            <Button variant="contained" color="primary" size="large">
+            <Button
+              variant="contained"
+              color="primary"
+              size="large"
+              onClick={submitHandler}
+            >
               Create
             </Button>
           </Grid>

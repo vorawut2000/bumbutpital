@@ -1,6 +1,6 @@
 import React from "react";
 import { GET_ALL_USERS } from "../../Graphql/Queries";
-import { useQuery } from "@apollo/client";
+import { useMutation, useQuery } from "@apollo/client";
 import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
 import Table from "@material-ui/core/Table";
 import TableBody from "@material-ui/core/TableBody";
@@ -11,7 +11,8 @@ import TableRow from "@material-ui/core/TableRow";
 import Typography from "@material-ui/core/Typography";
 import Paper from "@material-ui/core/Paper";
 import { Link, useHistory } from "react-router-dom";
-import { Button } from "@material-ui/core";
+import { Button, Grid } from "@material-ui/core";
+import { DELETE_USER } from "../../Graphql/Mutation";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -54,6 +55,13 @@ const useStyles = makeStyles((theme: Theme) =>
       height: 36,
       float: "right",
     },
+    navLogo: {
+      width: "50px",
+      height: "50px",
+    },
+    paperpong: {
+      textAlign: 'center',
+    }
   })
 );
 
@@ -61,9 +69,10 @@ const ListOfUsers = () => {
   const classes = useStyles();
   const history = useHistory();
   const { data } = useQuery(GET_ALL_USERS);
+  const [deleteUser, { error }] = useMutation(DELETE_USER);
 
   const submitHandler = () => {
-    history.push("/user/createUser");
+    history.push("/createUser");
   };
 
   return (
@@ -117,19 +126,21 @@ const ListOfUsers = () => {
                     >
                       View Detail
                     </Link>
-                    <Link
-                      to={"/user/edit/" + user.id}
+                    <Button
                       className={classes.manageListDelete}
-                      // onClick={() => handleDelete(user.id)}
+                      onClick={() => {
+                        deleteUser({ variables: { id: user.id}})
+                      }}
                     >
                       Delete
-                    </Link>
+                    </Button>
                   </TableCell>
                 </TableRow>
               ))}
           </TableBody>
         </Table>
       </TableContainer>
+
     </div>
   );
 };

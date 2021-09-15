@@ -22,7 +22,7 @@ import { useQuery } from "@apollo/client";
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
-      flexGrow: 1,
+      flex: "auto",
       padding: "32px",
     },
     title: {
