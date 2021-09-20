@@ -16,7 +16,7 @@ import Forum from "./app/forum/Forum";
 import Home from "./app/home/Home";
 import Landing from "./app/landing/Landing";
 import ManageVideo from "./app/management/Video";
-import ManageUser from "./app/management/User";
+// import ManageUser from "./app/management/User";
 import ManagePromotion from "./app/management/Promotion";
 import ManageCategory from "./app/management/Category";
 import ManageContent from "./app/management/Content";

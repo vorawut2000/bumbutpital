@@ -11,7 +11,7 @@ import TableRow from "@material-ui/core/TableRow";
 import Typography from "@material-ui/core/Typography";
 import Paper from "@material-ui/core/Paper";
 import { Link, useHistory } from "react-router-dom";
-import { Button, Grid } from "@material-ui/core";
+import { Button } from "@material-ui/core";
 import { DELETE_USER } from "../../Graphql/Mutation";
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -60,8 +60,8 @@ const useStyles = makeStyles((theme: Theme) =>
       height: "50px",
     },
     paperpong: {
-      textAlign: 'center',
-    }
+      textAlign: "center",
+    },
   })
 );
 
@@ -69,7 +69,7 @@ const ListOfUsers = () => {
   const classes = useStyles();
   const history = useHistory();
   const { data } = useQuery(GET_ALL_USERS);
-  const [deleteUser, { error }] = useMutation(DELETE_USER);
+  const [deleteUser] = useMutation(DELETE_USER);
 
   const submitHandler = () => {
     history.push("/createUser");
@@ -129,7 +129,7 @@ const ListOfUsers = () => {
                     <Button
                       className={classes.manageListDelete}
                       onClick={() => {
-                        deleteUser({ variables: { id: user.id}})
+                        deleteUser({ variables: { id: user.id } });
                       }}
                     >
                       Delete
@@ -140,7 +140,6 @@ const ListOfUsers = () => {
           </TableBody>
         </Table>
       </TableContainer>
-
     </div>
   );
 };
