@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
 import {
+  Backdrop,
   Button,
   Card,
   CardActions,
@@ -13,6 +14,7 @@ import {
   Select,
   Typography,
 } from "@material-ui/core";
+import PreviewChange from "./PreviewChange";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -21,7 +23,7 @@ const useStyles = makeStyles((theme: Theme) =>
       borderWidth: "1px",
       borderColor: "#D1D1D1",
       borderRadius: "8px",
-      marginBottom: "40px"
+      marginBottom: "40px",
     },
     header: {
       backgroundColor: "#F8F8F8",
@@ -41,7 +43,11 @@ const useStyles = makeStyles((theme: Theme) =>
     action: {
       backgroundColor: "#F8F8F8",
       justifyContent: "space-between",
-      padding: "25px",
+      padding: "16px",
+    },
+    backdrop: {
+      zIndex: theme.zIndex.drawer + 1,
+      color: "#fff",
     },
   })
 );
@@ -51,6 +57,7 @@ const PublishCard = () => {
   const [status, setStatus] = useState("");
   const [visibility, setVisibility] = useState("");
   const [publish, setPublish] = useState("");
+  const [open, setOpen] = React.useState(false);
 
   const handleStatusChange = (event: React.ChangeEvent<{ value: unknown }>) => {
     setStatus(event.target.value as string);
@@ -64,6 +71,13 @@ const PublishCard = () => {
     event: React.ChangeEvent<{ value: unknown }>
   ) => {
     setPublish(event.target.value as string);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+  const handleToggle = () => {
+    setOpen(!open);
   };
 
   return (
@@ -163,6 +177,12 @@ const PublishCard = () => {
             </Select>
           </FormControl>
         </Grid>
+        <Button size="medium" color="primary"           onClick={handleToggle}>
+          Preview Changes
+        </Button>
+        <Backdrop className={classes.backdrop} open={open} >
+          <PreviewChange onClick={handleClose}/>
+        </Backdrop>
       </CardContent>
       <CardActions className={classes.action}>
         <Button size="small" color="secondary">
