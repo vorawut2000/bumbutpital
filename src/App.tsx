@@ -40,12 +40,11 @@ function App() {
               <Sidebar />
               <Route exact path="/home" component={Home} />
               <Route path="/forum" component={Forum} />
-              <Route path="/contents" component={ManageContent} />
-              <Route path="/content/createContent" component={AddContent} />
               <Route path="/postCategories" component={ManageCategory} />
               <Route path="/videos" component={ManageVideo} />
               <ApolloProvider client={client}>
-                {/* <Route path="/user" component={ManageUser} /> */}
+                <Route path="/contents" component={ManageContent} />
+                <Route path="/content/createContent" component={AddContent} />
                 <Route path="/users" component={ListOfUsers} />
                 <Route path="/createUser" component={AddUser} />
                 <Route path="/user/:id" component={EditUser} />
@@ -57,9 +56,6 @@ function App() {
         </div>
       </div>
     </Router>
-
-
-
   );
 }
 

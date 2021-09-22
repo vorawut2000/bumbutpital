@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
 import { Grid, TextField, Typography } from "@material-ui/core";
 import PublishCard from "../../components/addContentCard/PublishCard";
 import SelectCategoryCard from "../../components/addContentCard/SelectCategoryCard";
 import SelectDepressionCard from "../../components/addContentCard/SelectDepressionCard";
-import UploadCard from "../../components/addContentCard/UploadCard";
+// import UploadCard from "../../components/addContentCard/UploadCard";
+import "filepond/dist/filepond.min.css";
+import storage from "../../firebase";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -36,6 +38,14 @@ const useStyles = makeStyles((theme: Theme) =>
 
 const AddContent = () => {
   const classes = useStyles();
+  const [image, setImage] = useState();
+  // const upload = () => {
+  //   if (image == null) return;
+  //   storage
+  //     .ref(`/images/${image.name}`)
+  //     .put(image)
+  //     .on("state_changed", alert("success"), alert);
+  // };
 
   return (
     <div className={classes.root}>
@@ -85,7 +95,14 @@ const AddContent = () => {
             multiline
             rows={20}
           />
-          <UploadCard/>
+          {/* <UploadCard/> */}
+          {/* <input
+            type="file"
+            onChange={(e) => {
+              setImage(e.target.files[0]);
+            }}
+          /> */}
+          <button>Upload</button>
         </Grid>
         <Grid item xs={3}>
           <PublishCard />

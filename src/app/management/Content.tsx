@@ -1,118 +1,147 @@
 import React from "react";
-import classes from "./Management.module.css";
-import { contentData } from "../../dummyData";
-import { Button, makeStyles } from "@material-ui/core";
-import { DataGrid } from "@mui/x-data-grid";
 import { Link, useHistory } from "react-router-dom";
-import { useState } from "react";
 
-const useStyles = makeStyles({
-  root: {
-    background: "#6367EA",
-    borderRadius: 5,
-    border: 0,
-    color: "white",
-    height: 36,
-    float: "right",
-  },
-});
+// import { GET_ALL_CONTENT } from "../../Graphql/Queries";
+// import { useMutation, useQuery } from "@apollo/client";
+// import { DELETE_CONTENT } from "../../Graphql/Mutation";
 
-//have to change type!!!!
+import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
+import Paper from "@material-ui/core/Paper";
+import Table from "@material-ui/core/Table";
+import TableBody from "@material-ui/core/TableBody";
+import TableCell from "@material-ui/core/TableCell";
+import TableContainer from "@material-ui/core/TableContainer";
+import TableHead from "@material-ui/core/TableHead";
+import TableRow from "@material-ui/core/TableRow";
+import Typography from "@material-ui/core/Typography";
+import Button from "@material-ui/core/Button";
+
+const useStyles = makeStyles((theme: Theme) =>
+  createStyles({
+    root: {
+      flex: "auto",
+      padding: "30px",
+    },
+    addTitle: {
+      fontSize: "32px",
+      fontWeight: 600,
+    },
+    paper: {
+      width: "100%",
+      marginBottom: theme.spacing(2),
+    },
+    table: {
+      minWidth: 750,
+    },
+    manageListDetail: {
+      padding: "5px 10px",
+      color: "#6367ea",
+      cursor: "pointer",
+      marginRight: "20px",
+      textDecoration: "none",
+      fontSize: "16px",
+    },
+    manageListDelete: {
+      padding: "5px 10px",
+      color: "#ea6363",
+      cursor: "pointer",
+      marginRight: "20px",
+      textDecoration: "none",
+      fontSize: "16px",
+    },
+    titleButton: {
+      background: "#6367EA",
+      borderRadius: 5,
+      border: 0,
+      color: "white",
+      height: 36,
+      float: "right",
+    },
+    navLogo: {
+      width: "50px",
+      height: "50px",
+    },
+    paperpong: {
+      textAlign: "center",
+    },
+  })
+);
+
 const ManageContent = () => {
+  const classes = useStyles();
   const history = useHistory();
-  const style = useStyles();
-  const [data, setData] = useState(contentData);
-
-  const handleDelete = (id: any) => {
-    setData(data.filter((item) => item.id !== id));
-  };
+  // const { data } = useQuery(GET_ALL_CONTENTS);
+  // const [deleteContent] = useMutation(DELETE_CONTENT);
 
   const submitHandler = () => {
     history.push("/content/createContent");
   };
 
-  const columns = [
-    {
-      field: "id",
-      headerName: "No.",
-      width: 190,
-    },
-    {
-      field: "title",
-      headerName: "Title",
-      width: 300,
-    },
-    { field: "username", headerName: "Author", width: 300 },
-    {
-      field: "categories",
-      headerName: "Categories",
-      width: 300,
-    },
-    {
-      field: "depression",
-      headerName: "Depression Severity",
-      width: 300,
-    },
-    {
-      field: "date",
-      headerName: "Date",
-      width: 300,
-    },
-    {
-      field: "action",
-      headerName: "Action",
-      width: 300,
-      renderCell: (params: any) => {
-        return (
-          <>
-            <Link
-              to={"/contents/" + params.row.id}
-              className={classes.manageListEdit}
-            >
-              Edit
-            </Link>
-            <Link
-              to={"/contents/" + params.row.id}
-              className={classes.manageListDelete}
-              onClick={() => handleDelete(params.row.id)}
-            >
-              Delete
-            </Link>
-            <Link
-              to={"/contents/" + params.row.id}
-              className={classes.manageListPublish}
-            >
-              Publish
-            </Link>
-          </>
-        );
-      },
-    },
-  ];
-
   return (
-    <div className={classes.manageList}>
-      <div className={classes.manageTitle}>
+    <div className={classes.root}>
+      <Typography
+        className={classes.addTitle}
+        gutterBottom
+        variant="h1"
+        component="h1"
+      >
         Content Management
         <Button
           variant="contained"
           color="primary"
           size="large"
-          className={style.root}
+          className={classes.titleButton}
           onClick={submitHandler}
         >
           Add Content
         </Button>
-      </div>
-      <DataGrid
-        autoHeight
-        autoPageSize={true}
-        checkboxSelection
-        columns={columns}
-        disableSelectionOnClick
-        pageSize={10}
-        rows={data}
-      />
+      </Typography>
+      <TableContainer component={Paper}>
+        <Table className={classes.table} aria-label="simple table">
+          <TableHead>
+            <TableRow>
+              <TableCell>No.</TableCell>
+              <TableCell align="left">Username</TableCell>
+              <TableCell align="left">Name</TableCell>
+              <TableCell align="left">Surname</TableCell>
+              <TableCell align="left">Email</TableCell>
+              <TableCell align="left">Phone Number</TableCell>
+              <TableCell align="left">Action</TableCell>
+            </TableRow>
+          </TableHead>
+          <TableBody>
+            {/* {data &&
+              data.getAllContent.map((content: any) => (
+                <TableRow key={content.contentID}>
+                  <TableCell component="th" scope="row">
+                    {content.id}
+                  </TableCell>
+                  <TableCell align="left">{content.username}</TableCell>
+                  <TableCell align="left">{content.name}</TableCell>
+                  <TableCell align="left">{content.surname}</TableCell>
+                  <TableCell align="left">{content.email}</TableCell>
+                  <TableCell align="left">{content.phoneNumber}</TableCell>
+                  <TableCell align="left">
+                    <Link
+                      to={"/user/" + content.id}
+                      className={classes.manageListDetail}
+                    >
+                      View Detail
+                    </Link>
+                    <Button
+                      className={classes.manageListDelete}
+                      onClick={() => {
+                        deleteContent({ variables: { id: content.id } });
+                      }}
+                    >
+                      Delete
+                    </Button>
+                  </TableCell>
+                </TableRow>
+              ))} */}
+          </TableBody>
+        </Table>
+      </TableContainer>
     </div>
   );
 };
